@@ -24,6 +24,16 @@ def pls_da(X_train, y_train, X_test, th = 0.5):
     binary_prediction = (y_pred > th).astype('uint8')
     return binary_prediction
 
+def pls_da1(X_train, y_train, X_test, th = 0.5):
+    # Define the PLS object
+    pls_binary = PLSRegression(n_components = 2)
+
+    # Calculate coefficients
+    pls_binary.fit(X_train, y_train)
+    return pls_binary.coef_
+
+
+
 if __name__=="__main__":
         
     # Load data
